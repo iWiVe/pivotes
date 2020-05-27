@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(233, 233, 236);
+}
+$colorAzul: rgb(61, 100, 172);
+$colorAzulHover: rgb(35, 72, 141);
+
+.btn-info {
+    background-color: $colorAzul;
+    border-color: none;
+    box-shadow: none !important;
+
+
+    &:link {
+        background-color: $colorAzul;
+        border-color: none;
+        box-shadow: none;
+    }
+
+    &:hover {
+        background-color: $colorAzulHover;
+        box-shadow: none;
+        border-color: none;
+    }
+
+    &:active {
+        background-color: $colorAzulHover;
+        box-shadow: none;
+        border-color: none;
+    }
+
+    &:focus {
+        background-color: $colorAzul;
+        box-shadow: none;
+        border-color: none;
+    }
+
+    &:visited {
+        background-color: $colorAzul;
+        box-shadow: none;
+        border-color: none;
+    }
+
+
+    &:not(:disabled):not(.disabled).active, 
+    &:not(:disabled):not(.disabled):active, 
+    .show>.btn-info.dropdown-toggle {
+        background-color: $colorAzulHover;
+        box-shadow: none;
+        border-color: none;
+    }
+
+    
+
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,91 @@
+<div >
+    <div class="row" style="display: flex; justify-content: space-around;">
+    
+        <div class="card-orange" (click)="changePivot(pivotes.DEVEXPRESS)">
+            <h2>DevExtreme</h2>
+        </div>
+
+        <div class="card-redOrange" (click)="changePivot(pivotes.FLEXMONSTER)">
+            <h2>Flex Monster</h2>
+        </div>
+
+        <div class="card-cornFlowerBlue" (click)="changePivot(pivotes.SYNFUSION)">
+            <h2>Synfusion</h2>
+        </div>
+
+    </div>
+</div>
+
+<br>
+
+<div class="row" >
+    <h4 style="width: 100%; text-align: center;">Pivot Seleccionada: {{pivotes[pivoteSeleccionada]}}</h4>
+</div>
+
+
+<br/>
+
+<div *ngIf="pivoteSeleccionada === pivotes.DEVEXPRESS" class="dx-viewport" >
+
+    <dx-pivot-grid id="pivotgrid"
+    [allowExpandAll] = "true"
+    [allowSortingBySummary]="true"
+    [allowFiltering]="true"
+    [showBorders]="true"
+    [allowSortingBySummary]="true"
+    [showColumnGrandTotals]="false"
+    [showRowGrandTotals]="true"
+    [showRowTotals]="true"
+    [showColumnTotals]="true"
+    [dataSource]="pivotGridDataSource"
+    [height]="440">
+
+    <dxo-field-chooser [enabled]="true" [height]="500"></dxo-field-chooser>
+
+    <dxo-scrolling mode="virtual"></dxo-scrolling>
+
+  </dx-pivot-grid>
+
+</div>
+
+<div *ngIf="pivoteSeleccionada === pivotes.FLEXMONSTER">
+
+    <fm-pivot [toolbar]="true"
+        (beforetoolbarcreated)="createToolBar($event)"
+        [width]="'100%'"
+        [height]="500"
+        [licenseKey]="'Z7FI-XBJC5U-1R6C5O-6X0J0Y'"
+        [report]="report">
+    </fm-pivot> 
+
+</div>
+
+<div *ngIf="pivoteSeleccionada === pivotes.SYNFUSION">
+
+    <div class="row mb-2 d-flex flex-row">
+        <div class="align-self-start flex-grow-1">
+
+        </div>
+        <div class="align-self-end">
+            <button class="btn btn-primary btn-md" (click)="exportPivot()">Exportar</button>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <ejs-pivotview #pivotview
+            id='PivotView'
+            height='350'
+            locale="es-ES"
+            [dataSourceSettings]='dataSourceSettings'
+            showFieldList='true'
+            enableVirtualization='true'
+            showGroupingBar='true'
+            allowExcelExport='true'
+            [aggregateTypes]='aggregateTypes'>
+        </ejs-pivotview>
+    </div>
+
+    
+
+</div>

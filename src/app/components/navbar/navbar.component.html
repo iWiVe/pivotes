@@ -1,0 +1,10 @@
+<div class="navbarPersonalizada">
+  <div class="logo" (click)="irInicio()">
+    <fa-icon [icon]="faCoffee"></fa-icon>
+  </div>
+  <ul>
+  <li *ngFor="let item of listMenu" >
+    <a routerLink="{{item.ruta}}"> {{item.nombre}} </a>
+  </li>
+</ul>
+</div>
