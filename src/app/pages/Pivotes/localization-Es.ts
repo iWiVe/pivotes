@@ -1,4 +1,5 @@
 export let localization = {
+  
     "fieldsList": {
       "flatHierarchyBox": "Seleccionar y organizar columnas",
       "hierarchyBox": "Seleccionar dimensiones",
